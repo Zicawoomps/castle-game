@@ -5,6 +5,9 @@ extends CharacterBody2D
 
 const SPEED = 70
 
+func _ready() -> void:
+	animated_sprite.play("walk up")
+
 func _physics_process(_delta: float) -> void:
 	var DIRECTION = Input.get_vector("left", "right", "up", "down")
 	velocity = DIRECTION * SPEED

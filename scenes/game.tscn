@@ -1,8 +1,8 @@
-[gd_scene format=4 uid="uid://b1oi0w0qlg70s"]
+[gd_scene format=4 uid="uid://8aehk6wuonh"]
 
 [ext_resource type="Texture2D" uid="uid://04bwbewi7tod" path="res://assets/tileset.png" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://ccfh4ctakr7qd" path="res://scenes/player.tscn" id="1_uwrxv"]
-[ext_resource type="Texture2D" uid="uid://biu8a0o1ca2vx" path="res://icon.svg" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://kee6j2lv487c" path="res://scenes/gui.tscn" id="3_iywne"]
 [ext_resource type="Script" uid="uid://c5fmty31y18s0" path="res://scripts/door_collision_parent.gd" id="4_iywne"]
 [ext_resource type="PackedScene" uid="uid://dycpl064slknj" path="res://scenes/interact_collision.tscn" id="4_lbhrr"]
 
@@ -81,108 +81,25 @@ drag_left_margin = 0.45
 drag_right_margin = 0.45
 drag_bottom_margin = 0.1
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1653266316]
-scale = Vector2(3, 3)
-transform = Transform2D(3, 0, 0, 3, 0, 0)
+[node name="gui" parent="." unique_id=601234170 instance=ExtResource("3_iywne")]
 
-[node name="Control" type="MarginContainer" parent="CanvasLayer" unique_id=578685333]
-offset_right = 384.0
-offset_bottom = 216.0
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control" unique_id=853189887]
-custom_minimum_size = Vector2(384, 60)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
-color = Color(0, 0, 0, 1)
-
-[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/Control/ColorRect" unique_id=1235676090]
-custom_minimum_size = Vector2(360, 40)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -180.0
-offset_top = -20.0
-offset_right = 180.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/Control/ColorRect/MarginContainer2" unique_id=1980894572]
-layout_mode = 2
-texture = ExtResource("2_yqjtg")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/ColorRect/MarginContainer2" unique_id=1706333183]
-layout_mode = 2
-alignment = 1
-
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/ColorRect/MarginContainer2/HBoxContainer" unique_id=1294727476]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/ColorRect/MarginContainer2/HBoxContainer/MarginContainer" unique_id=364539667]
-layout_mode = 2
-texture = ExtResource("2_yqjtg")
-expand_mode = 1
-
-[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/Control/ColorRect/MarginContainer2/HBoxContainer" unique_id=211631503]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/ColorRect/MarginContainer2/HBoxContainer/MarginContainer2" unique_id=1333619900]
-layout_mode = 2
-texture = ExtResource("2_yqjtg")
-expand_mode = 1
-
-[node name="MarginContainer3" type="MarginContainer" parent="CanvasLayer/Control/ColorRect/MarginContainer2/HBoxContainer" unique_id=232949979]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/ColorRect/MarginContainer2/HBoxContainer/MarginContainer3" unique_id=1982158075]
-layout_mode = 2
-texture = ExtResource("2_yqjtg")
-expand_mode = 1
-
-[node name="MarginContainer4" type="MarginContainer" parent="CanvasLayer/Control/ColorRect/MarginContainer2/HBoxContainer" unique_id=728682807]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/ColorRect/MarginContainer2/HBoxContainer/MarginContainer4" unique_id=1073863950]
-layout_mode = 2
-texture = ExtResource("2_yqjtg")
-expand_mode = 1
-
-[node name="MarginContainer5" type="MarginContainer" parent="CanvasLayer/Control/ColorRect/MarginContainer2/HBoxContainer" unique_id=1406450523]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/ColorRect/MarginContainer2/HBoxContainer/MarginContainer5" unique_id=265269182]
-layout_mode = 2
-texture = ExtResource("2_yqjtg")
-expand_mode = 1
-
-[node name="doorCollisionParent" type="Node" parent="." unique_id=297227798]
+[node name="door_collision_parent" type="Node" parent="." unique_id=927474251]
 script = ExtResource("4_iywne")
 
-[node name="door1Collision" parent="doorCollisionParent" unique_id=1719137547 instance=ExtResource("4_lbhrr")]
+[node name="door1Collision" parent="door_collision_parent" unique_id=1719137547 instance=ExtResource("4_lbhrr")]
 position = Vector2(-48, -72)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="doorCollisionParent/door1Collision" unique_id=164112985]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door_collision_parent/door1Collision" unique_id=164112985]
 shape = SubResource("RectangleShape2D_iywne")
 
-[node name="door2Collision" parent="doorCollisionParent" unique_id=382060777 instance=ExtResource("4_lbhrr")]
+[node name="door2Collision" parent="door_collision_parent" unique_id=382060777 instance=ExtResource("4_lbhrr")]
 position = Vector2(0, -72)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="doorCollisionParent/door2Collision" unique_id=500488950]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door_collision_parent/door2Collision" unique_id=500488950]
 shape = SubResource("RectangleShape2D_iywne")
 
-[node name="door3Collision" parent="doorCollisionParent" unique_id=1990679257 instance=ExtResource("4_lbhrr")]
+[node name="door3Collision" parent="door_collision_parent" unique_id=1990679257 instance=ExtResource("4_lbhrr")]
 position = Vector2(48, -72)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="doorCollisionParent/door3Collision" unique_id=820177535]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door_collision_parent/door3Collision" unique_id=820177535]
 shape = SubResource("RectangleShape2D_iywne")
