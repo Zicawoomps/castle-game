@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://lp0jh4n13i6j"]
+
+[ext_resource type="Texture2D" uid="uid://betyboppk1h27" path="res://assets/inv_slot.png" id="1_4v6ba"]
+[ext_resource type="FontFile" uid="uid://bu3mt24iq870a" path="res://assets/pixelfont.fnt" id="2_ic0fu"]
+
+[node name="SlotOne" type="MarginContainer" unique_id=900972848]
+custom_minimum_size = Vector2(30, 30)
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="TextureRect" type="Sprite2D" parent="." unique_id=1041512550]
+texture = ExtResource("1_4v6ba")
+centered = false
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2056532761]
+layout_mode = 2
+theme_override_constants/margin_right = -1
+theme_override_constants/margin_bottom = -3
+
+[node name="Label" type="Label" parent="MarginContainer" unique_id=1590128170]
+z_index = 10
+texture_filter = 1
+texture_repeat = 1
+custom_minimum_size = Vector2(7, 10)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_ic0fu")
+theme_override_font_sizes/font_size = 14
+text = "0"
