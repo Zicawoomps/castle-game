@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://kpaaff084tc6"]
-
-[ext_resource type="Script" uid="uid://uahrngfhbp5r" path="res://scripts/autoloads/inventory_manager.gd" id="1_errlg"]
-
-[node name="Test" type="Node" unique_id=1957042358]
-script = ExtResource("1_errlg")

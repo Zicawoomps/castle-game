@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://c5fmty31y18s0" path="res://scripts/door_collision_parent.gd" id="4_iywne"]
 [ext_resource type="PackedScene" uid="uid://dycpl064slknj" path="res://scenes/interact_collision.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://t7kll1npjcxm" path="res://scenes/dropped_item.tscn" id="6_p57ef"]
+[ext_resource type="Resource" uid="uid://cnnb485loeg3f" path="res://items/toy_sword.tres" id="7_u5sy4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lbhrr"]
 texture = ExtResource("1_lnu2h")
@@ -106,4 +107,5 @@ position = Vector2(48, -72)
 shape = SubResource("RectangleShape2D_iywne")
 
 [node name="DroppedItem" parent="." unique_id=1378204117 instance=ExtResource("6_p57ef")]
-position = Vector2(-1, -39)
+position = Vector2(0, -35)
+item = ExtResource("7_u5sy4")

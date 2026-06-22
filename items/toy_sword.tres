@@ -2,10 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://d2vu5o5kpw273" path="res://assets/toy_sword.png" id="1_6hhn8"]
 [ext_resource type="Script" uid="uid://bss74suhfjyy2" path="res://scripts/resources/weapon_data.gd" id="1_fcqtp"]
+[ext_resource type="Texture2D" uid="uid://buwb2qq0h5jqy" path="res://assets/held_toy_sword.png" id="1_qqsav"]
 
 [resource]
 script = ExtResource("1_fcqtp")
 WeaponDamage = 5
-ItemTexture = ExtResource("1_6hhn8")
+SlotItemTexture = ExtResource("1_6hhn8")
+HeldItemTexture = ExtResource("1_qqsav")
 ItemName = "toy_sword"
 metadata/_custom_type_script = "uid://bss74suhfjyy2"

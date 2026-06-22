@@ -2,7 +2,6 @@ extends Node
 
 @onready var hot_bar: HBoxContainer = $Control/MarginContainer2/HotBar
 
-var selectedSlot = 0
 
 func changeSlotColor(slot):
 	var slotTexture = hot_bar.get_child(slot).get_child(0)
@@ -10,17 +9,17 @@ func changeSlotColor(slot):
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("1"):
-		selectedSlot = 0
+		PlayerManager.selectedSlot = 0
 	elif Input.is_action_just_pressed("2"):
-		selectedSlot = 1
+		PlayerManager.selectedSlot = 1
 	elif Input.is_action_just_pressed("3"):
-		selectedSlot = 2
+		PlayerManager.selectedSlot = 2
 	elif Input.is_action_just_pressed("4"):
-		selectedSlot = 3
+		PlayerManager.selectedSlot = 3
 	elif Input.is_action_just_pressed("5"):
-		selectedSlot = 4
+		PlayerManager.selectedSlot = 4
 	
-	match selectedSlot:
+	match PlayerManager.selectedSlot:
 		0:
 			changeSlotColor(0)
 			hot_bar.get_child(1).get_child(0).texture = load("res://assets/inv_slot.png")
@@ -56,17 +55,16 @@ func _process(_delta: float) -> void:
 			hot_bar.get_child(3).get_child(0).texture = load("res://assets/inv_slot.png")
 			hot_bar.get_child(0).get_child(0).texture = load("res://assets/inv_slot.png")
 			
-	
 	for i in InventoryManager.inventory.size():
 		var itemData = InventoryManager.inventory[i]
 		var slot = hot_bar.get_child(i)
 		var slotItem = slot.get_child(2)
 		slot.get_child(1).get_child(0).hide()
-		var itemTexture = load("res://assets/temp_empty_slot.png")
+		var itemTexture = null
 		if itemData["item"] == "":
 			slotItem.texture = itemTexture
 			continue
-		itemTexture = load("res://assets/" + itemData["item"] + ".png")
+		itemTexture = itemData["file"].SlotItemTexture
 		if itemData["count"] > 1:
 			slot.get_child(1).get_child(0).show()
 		slotItem.texture = itemTexture
