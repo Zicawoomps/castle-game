@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+var load_di = preload("res://scenes/damage_indicator.tscn")
 
 var heldItem = null
 
@@ -27,7 +28,18 @@ func use_weapon(_itemFile):
 			"down":
 				animation_player.play("swing_down")
 
-
 func _on_area_2d_area_entered(area: Area2D) -> void:
+	var Enemy = area.get_parent()
 	if area.is_in_group("Enemy"):
-		pass
+		Enemy.EnemyFile.Health -= heldItem.WeaponDamage
+		indicate_damage(Enemy)
+				
+func indicate_damage(parent):
+	var DamageIndicator = load_di.instantiate()
+	parent.add_child(DamageIndicator)
+	var rng = RandomNumberGenerator.new()
+	rng.randomize()
+	var rngX = rng.randi_range(-5,9)
+	var rngY = rng.randi_range(-10,-18)
+	DamageIndicator.position = Vector2(rngX,rngY)
+	DamageIndicator.get_child(0).get_child(0).text = str(heldItem.WeaponDamage)
