@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://cjeraegxewmc6"]
+
+[ext_resource type="Texture2D" uid="uid://dx6d3enhq3obn" path="res://assets/dummy.png" id="1_1pij7"]
+[ext_resource type="Script" uid="uid://b385sjme6clxa" path="res://scripts/resources/enemy_data.gd" id="1_h0c31"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1pij7"]
+atlas = ExtResource("1_1pij7")
+region = Rect2(0, 0, 10, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8gswe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1pij7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("1_h0c31")
+SpriteSheet = SubResource("SpriteFrames_8gswe")
+Name = "Dummy"
+Health = -1
+Weight = -1
+metadata/_custom_type_script = "uid://b385sjme6clxa"

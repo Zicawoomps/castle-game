@@ -26,3 +26,8 @@ func use_weapon(_itemFile):
 				animation_player.play("swing_up")
 			"down":
 				animation_player.play("swing_down")
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Enemy"):
+		pass

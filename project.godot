@@ -24,6 +24,10 @@ PlayerManager="*uid://b6irl1gci37q1"
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
+[global_group]
+
+Enemy=""
+
 [gui]
 
 fonts/dynamic_fonts/use_oversampling=false

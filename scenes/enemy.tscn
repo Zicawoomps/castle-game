@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://dx3xr2kmtdei7"]
+
+[ext_resource type="Texture2D" uid="uid://dx6d3enhq3obn" path="res://assets/dummy.png" id="1_7p1mj"]
+[ext_resource type="Script" uid="uid://cyx0tuyq0qsl2" path="res://scripts/enemy.gd" id="1_md0e3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_md0e3"]
+atlas = ExtResource("1_7p1mj")
+region = Rect2(0, 0, 10, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4ra3w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_md0e3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5uy6h"]
+size = Vector2(8, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_md0e3"]
+size = Vector2(8, 16)
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1935463002]
+script = ExtResource("1_md0e3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1715574532]
+sprite_frames = SubResource("SpriteFrames_4ra3w")
+frame_progress = 0.44601864
+
+[node name="hitbox" type="CollisionShape2D" parent="." unique_id=1713659624]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_5uy6h")
+
+[node name="hurtbox" type="Area2D" parent="." unique_id=190353224 groups=["Enemy"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" unique_id=1318923545]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_md0e3")
