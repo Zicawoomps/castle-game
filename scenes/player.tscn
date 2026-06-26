@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://co0111svamw2" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://vaq8fgcepu3e" path="res://assets/new_player.png" id="2_g2els"]
 [ext_resource type="Script" uid="uid://7uf0va2q4hu0" path="res://scripts/held_item.gd" id="3_qhqgy"]
-[ext_resource type="Texture2D" uid="uid://buwb2qq0h5jqy" path="res://assets/held_toy_sword.png" id="4_dqkch"]
+[ext_resource type="Texture2D" uid="uid://c4kpoi2r7p06l" path="res://assets/temp_dropped_item.png" id="4_dqkch"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
 atlas = ExtResource("2_g2els")
@@ -333,7 +333,7 @@ z_index = -1
 rotation = 3.1415927
 script = ExtResource("3_qhqgy")
 
-[node name="Area2D" type="Area2D" parent="HeldItem" unique_id=388848380]
+[node name="Area2D" type="Area2D" parent="HeldItem" unique_id=388848380 groups=["Enemy"]]
 position = Vector2(-8.000001, -6)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HeldItem/Area2D" unique_id=1853454384]
@@ -349,5 +349,3 @@ flip_h = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="HeldItem" unique_id=1000410478]
 libraries/ = SubResource("AnimationLibrary_fjrip")
-
-[connection signal="area_entered" from="HeldItem/Area2D" to="HeldItem" method="_on_area_2d_area_entered"]

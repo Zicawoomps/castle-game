@@ -1,0 +1,2 @@
+class_name ToolData
+extends WeaponData

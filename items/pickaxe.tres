@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ToolData" format=3 uid="uid://cjb4lrlejr1lq"]
+
+[ext_resource type="Texture2D" uid="uid://bpg21y3regnjf" path="res://assets/held_pickaxe.png" id="1_0tumq"]
+[ext_resource type="Script" uid="uid://dhdm7pfujb8g5" path="res://scripts/resources/tool_data.gd" id="1_kejro"]
+[ext_resource type="Texture2D" uid="uid://c27y68jlx20hm" path="res://assets/pickaxe.png" id="2_nns10"]
+
+[resource]
+script = ExtResource("1_kejro")
+WeaponDamage = 6
+WeaponWeight = 15
+SlotItemTexture = ExtResource("2_nns10")
+HeldItemTexture = ExtResource("1_0tumq")
+ItemName = "Pickaxe"
+metadata/_custom_type_script = "uid://dhdm7pfujb8g5"

@@ -13,7 +13,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1pij7")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -22,6 +22,6 @@ animations = [{
 script = ExtResource("1_h0c31")
 SpriteSheet = SubResource("SpriteFrames_8gswe")
 Name = "Dummy"
-Health = -1
+Health = -100
 Weight = -1
 metadata/_custom_type_script = "uid://b385sjme6clxa"

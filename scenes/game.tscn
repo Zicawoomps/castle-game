@@ -92,26 +92,29 @@ script = ExtResource("4_iywne")
 
 [node name="door1Collision" parent="door_collision_parent" unique_id=1719137547 instance=ExtResource("4_lbhrr")]
 position = Vector2(-48, -72)
+script = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door_collision_parent/door1Collision" unique_id=164112985]
 shape = SubResource("RectangleShape2D_iywne")
 
 [node name="door2Collision" parent="door_collision_parent" unique_id=382060777 instance=ExtResource("4_lbhrr")]
 position = Vector2(0, -72)
+script = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door_collision_parent/door2Collision" unique_id=500488950]
 shape = SubResource("RectangleShape2D_iywne")
 
 [node name="door3Collision" parent="door_collision_parent" unique_id=1990679257 instance=ExtResource("4_lbhrr")]
 position = Vector2(48, -72)
+script = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door_collision_parent/door3Collision" unique_id=820177535]
 shape = SubResource("RectangleShape2D_iywne")
 
-[node name="DroppedItem" parent="." unique_id=1378204117 instance=ExtResource("6_p57ef")]
-position = Vector2(0, -35)
-item = ExtResource("7_u5sy4")
-
 [node name="CharacterBody2D2" parent="." unique_id=1935463002 instance=ExtResource("8_0tnpc")]
 position = Vector2(67, -41)
-EnemyFile = ExtResource("9_vtaks")
+File = ExtResource("9_vtaks")
+
+[node name="DroppedItem" parent="." unique_id=1378204117 instance=ExtResource("6_p57ef")]
+position = Vector2(-31, -22)
+item = ExtResource("7_u5sy4")

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="GatherableResource" format=3 uid="uid://bdkd5p3fw6711"]
+
+[ext_resource type="Texture2D" uid="uid://biauuqt3nu1hd" path="res://assets/iron_ore.png" id="1_j2cqa"]
+[ext_resource type="Resource" uid="uid://qtb1ex3dv08p" path="res://items/iron_ore_item.tres" id="1_y6kf1"]
+[ext_resource type="Script" uid="uid://cdked27st11e0" path="res://scripts/resources/gatherable_resource_data.gd" id="3_glu7g"]
+
+[resource]
+script = ExtResource("3_glu7g")
+Name = "Iron Ore"
+ItemDrops = ExtResource("1_y6kf1")
+ResourceTexture = ExtResource("1_j2cqa")
+metadata/_custom_type_script = "uid://cdked27st11e0"

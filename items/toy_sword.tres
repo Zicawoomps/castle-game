@@ -7,6 +7,7 @@
 [resource]
 script = ExtResource("1_fcqtp")
 WeaponDamage = 5
+WeaponWeight = 5
 SlotItemTexture = ExtResource("1_6hhn8")
 HeldItemTexture = ExtResource("1_qqsav")
 ItemName = "toy_sword"

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://djgskwq8e6h4o"]
+
+[ext_resource type="Texture2D" uid="uid://db76243xai1q2" path="res://assets/held_diamond_ore_item.png" id="1_hr8cg"]
+[ext_resource type="Script" uid="uid://duohxx0k6ohro" path="res://scripts/resources/item_data.gd" id="1_tfpgv"]
+[ext_resource type="Texture2D" uid="uid://cobs833i0gyvj" path="res://assets/diamond_ore_item.png" id="2_7tuh5"]
+
+[resource]
+script = ExtResource("1_tfpgv")
+SlotItemTexture = ExtResource("2_7tuh5")
+HeldItemTexture = ExtResource("1_hr8cg")
+ItemName = "Diamond Ore"
+MaxStackSize = 16
+metadata/_custom_type_script = "uid://duohxx0k6ohro"

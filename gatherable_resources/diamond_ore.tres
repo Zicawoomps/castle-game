@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="GatherableResource" format=3 uid="uid://cej7r1tyq43bl"]
+
+[ext_resource type="Resource" uid="uid://djgskwq8e6h4o" path="res://items/diamond_ore_item.tres" id="1_op88x"]
+[ext_resource type="Texture2D" uid="uid://ws2w6tj6syui" path="res://assets/diamond_ore.png" id="1_tlspm"]
+[ext_resource type="Script" uid="uid://cdked27st11e0" path="res://scripts/resources/gatherable_resource_data.gd" id="3_rh3ux"]
+
+[resource]
+script = ExtResource("3_rh3ux")
+Name = "Diamond Ore"
+ItemDrops = ExtResource("1_op88x")
+ResourceTexture = ExtResource("1_tlspm")
+metadata/_custom_type_script = "uid://cdked27st11e0"

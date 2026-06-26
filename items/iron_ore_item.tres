@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://qtb1ex3dv08p"]
+
+[ext_resource type="Texture2D" uid="uid://digbf5mlbbv6u" path="res://assets/held_iron_ore_item.png" id="1_4gbnb"]
+[ext_resource type="Script" uid="uid://duohxx0k6ohro" path="res://scripts/resources/item_data.gd" id="1_qmp62"]
+[ext_resource type="Texture2D" uid="uid://cykjeb06ox58" path="res://assets/iron_ore_item.png" id="2_xc8af"]
+
+[resource]
+script = ExtResource("1_qmp62")
+SlotItemTexture = ExtResource("2_xc8af")
+HeldItemTexture = ExtResource("1_4gbnb")
+ItemName = "Iron Ore"
+MaxStackSize = 16
+metadata/_custom_type_script = "uid://duohxx0k6ohro"

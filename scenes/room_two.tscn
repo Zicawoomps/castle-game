@@ -3,8 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://04bwbewi7tod" path="res://assets/tileset.png" id="1_7oewu"]
 [ext_resource type="PackedScene" uid="uid://ccfh4ctakr7qd" path="res://scenes/player.tscn" id="2_vvhat"]
 [ext_resource type="PackedScene" uid="uid://kee6j2lv487c" path="res://scenes/gui.tscn" id="3_13mfh"]
-[ext_resource type="PackedScene" uid="uid://dycpl064slknj" path="res://scenes/interact_collision.tscn" id="4_kssma"]
-[ext_resource type="Script" uid="uid://d1bfbuh7ukg6n" path="res://scripts/exit_room_two.gd" id="5_7oewu"]
+[ext_resource type="PackedScene" uid="uid://dycpl064slknj" path="res://scenes/interact_collision.tscn" id="4_pkhkx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lbhrr"]
 texture = ExtResource("1_7oewu")
@@ -55,8 +54,11 @@ texture = ExtResource("1_7oewu")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_gee14")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6cpkc"]
-size = Vector2(30, 3)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7oewu"]
+size = Vector2(30, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vvhat"]
+size = Vector2(26, 19)
 
 [node name="game" type="Node" unique_id=578954706]
 
@@ -89,12 +91,17 @@ drag_bottom_margin = 0.1
 
 [node name="gui" parent="." unique_id=601234170 instance=ExtResource("3_13mfh")]
 
-[node name="interactCollision" parent="." unique_id=1719137547 instance=ExtResource("4_kssma")]
+[node name="interactCollision" parent="." unique_id=1719137547 instance=ExtResource("4_pkhkx")]
 position = Vector2(0, 13)
-script = ExtResource("5_7oewu")
+room = "uid://8aehk6wuonh"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="interactCollision" unique_id=1360765911]
-position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_6cpkc")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactCollision" unique_id=596479078]
+shape = SubResource("RectangleShape2D_7oewu")
 
-[connection signal="body_entered" from="interactCollision" to="interactCollision" method="_on_body_entered"]
+[node name="interactCollision2" parent="." unique_id=282917563 instance=ExtResource("4_pkhkx")]
+position = Vector2(0, -62)
+room = "uid://borj74doieeeb"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactCollision2" unique_id=1968131539]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_vvhat")
