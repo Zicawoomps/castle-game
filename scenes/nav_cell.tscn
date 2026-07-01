@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://v4opguq6e53u"]
+
+[ext_resource type="Script" uid="uid://cwa455mat7mqp" path="res://scripts/nav_cell.gd" id="1_jhv2j"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lswti"]
+radius = 1.0
+
+[node name="NavCell" type="Area2D" unique_id=1249590681]
+script = ExtResource("1_jhv2j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=934102490]
+shape = SubResource("CircleShape2D_lswti")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

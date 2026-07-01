@@ -1,13 +1,15 @@
 extends Node
 
-@onready var hot_bar: HBoxContainer = $Control/MarginContainer2/HotBar
-
+@onready var hot_bar: HBoxContainer = $Control/MarginContainer2/VBoxContainer/HotBar
+@onready var label: Label = $Control/MarginContainer2/VBoxContainer/Label
 
 func changeSlotColor(slot):
 	var slotTexture = hot_bar.get_child(slot).get_child(0)
 	slotTexture.texture = load("res://assets/selected_slot.png")
 
+
 func _process(_delta: float) -> void:
+	label.text = "Health : " + str(PlayerManager.HEALTH)
 	if Input.is_action_just_pressed("1"):
 		PlayerManager.selectedSlot = 0
 	elif Input.is_action_just_pressed("2"):

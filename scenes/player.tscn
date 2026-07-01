@@ -2,8 +2,6 @@
 
 [ext_resource type="Script" uid="uid://co0111svamw2" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://vaq8fgcepu3e" path="res://assets/new_player.png" id="2_g2els"]
-[ext_resource type="Script" uid="uid://7uf0va2q4hu0" path="res://scripts/held_item.gd" id="3_qhqgy"]
-[ext_resource type="Texture2D" uid="uid://c4kpoi2r7p06l" path="res://assets/temp_dropped_item.png" id="4_dqkch"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
 atlas = ExtResource("2_g2els")
@@ -75,7 +73,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_g2els")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle_down",
 "speed": 5.0
 }, {
@@ -83,7 +81,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qhqgy")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle_left",
 "speed": 5.0
 }, {
@@ -91,7 +89,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dqkch")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle_right",
 "speed": 5.0
 }, {
@@ -99,7 +97,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qlg0r")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle_up",
 "speed": 5.0
 }, {
@@ -113,7 +111,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_smehm")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk_down",
 "speed": 5.0
 }, {
@@ -127,7 +125,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_d2wvv")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk_left",
 "speed": 5.0
 }, {
@@ -141,7 +139,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_oprun")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk_right",
 "speed": 5.0
 }, {
@@ -155,7 +153,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4r5pv")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk_up",
 "speed": 5.0
 }]
@@ -163,160 +161,12 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fjrip"]
 size = Vector2(2, 8)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dqkch"]
-radius = 3.0000005
-height = 10.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
+size = Vector2(8, 13)
 
-[sub_resource type="Animation" id="Animation_dqkch"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [3.1415927]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:z_index")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [-1]
-}
-
-[sub_resource type="Animation" id="Animation_qlg0r"]
-resource_name = "swing_down"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(-2, -2),
-"update": 0,
-"values": [2.7925267, 5.061455]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:z_index")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_smehm"]
-resource_name = "swing_left"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:z_index")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [-1, 0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(-2, -2),
-"update": 0,
-"values": [0.2617994, -1.8325957]
-}
-
-[sub_resource type="Animation" id="Animation_fjrip"]
-resource_name = "swing_right"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:z_index")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [-1, 0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(-2, -2),
-"update": 0,
-"values": [1.2217305, 3.403392]
-}
-
-[sub_resource type="Animation" id="Animation_tuyoq"]
-resource_name = "swing_up"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(-2, -2),
-"update": 0,
-"values": [1.9198622, -0.34906584]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:z_index")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [-1]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_fjrip"]
-_data = {
-&"RESET": SubResource("Animation_dqkch"),
-&"swing_down": SubResource("Animation_qlg0r"),
-&"swing_left": SubResource("Animation_smehm"),
-&"swing_right": SubResource("Animation_fjrip"),
-&"swing_up": SubResource("Animation_tuyoq")
-}
-
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=872834442]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=872834442 groups=["Player"]]
 z_index = 10
+motion_mode = 1
 script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=143940639]
@@ -328,24 +178,8 @@ position = Vector2(0, 7.5)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_fjrip")
 
-[node name="HeldItem" type="Node2D" parent="." unique_id=1088104351]
-z_index = -1
-rotation = 3.1415927
-script = ExtResource("3_qhqgy")
+[node name="Area2D" type="Area2D" parent="." unique_id=1866753476 groups=["Player"]]
 
-[node name="Area2D" type="Area2D" parent="HeldItem" unique_id=388848380 groups=["Enemy"]]
-position = Vector2(-8.000001, -6)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HeldItem/Area2D" unique_id=1853454384]
-z_index = 1
-position = Vector2(-1.1920929e-07, -1.9999999)
-rotation = -0.7853982
-shape = SubResource("CapsuleShape2D_dqkch")
-
-[node name="Sprite2D" type="Sprite2D" parent="HeldItem" unique_id=1547580411]
-position = Vector2(-6.0000005, -5.9999995)
-texture = ExtResource("4_dqkch")
-flip_h = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="HeldItem" unique_id=1000410478]
-libraries/ = SubResource("AnimationLibrary_fjrip")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=118134444]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_g2els")

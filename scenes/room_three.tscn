@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://ccfh4ctakr7qd" path="res://scenes/player.tscn" id="2_bn2nh"]
 [ext_resource type="PackedScene" uid="uid://kee6j2lv487c" path="res://scenes/gui.tscn" id="3_gaedb"]
 [ext_resource type="PackedScene" uid="uid://dycpl064slknj" path="res://scenes/interact_collision.tscn" id="4_r0l30"]
-[ext_resource type="PackedScene" uid="uid://8aehk6wuonh" path="res://scenes/game.tscn" id="5_gjnsj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lbhrr"]
 texture = ExtResource("1_gjnsj")
@@ -91,7 +90,7 @@ drag_bottom_margin = 0.1
 
 [node name="interactCollision" parent="." unique_id=1719137547 instance=ExtResource("4_r0l30")]
 position = Vector2(0, 13)
-room = ExtResource("5_gjnsj")
+room = "uid://8aehk6wuonh"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interactCollision" unique_id=1923255340]
 shape = SubResource("RectangleShape2D_gjnsj")

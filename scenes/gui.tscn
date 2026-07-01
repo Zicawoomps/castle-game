@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://de65ugv4tgqw0" path="res://scripts/inventory.gd" id="1_mfius"]
 [ext_resource type="PackedScene" uid="uid://lp0jh4n13i6j" path="res://scenes/slot.tscn" id="2_mfius"]
+[ext_resource type="FontFile" uid="uid://bu3mt24iq870a" path="res://assets/pixelfont.fnt" id="2_ynd5l"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=601234170]
 scale = Vector2(3, 3)
@@ -21,44 +22,52 @@ size_flags_horizontal = 0
 size_flags_vertical = 8
 theme_override_constants/margin_left = 10
 
-[node name="HotBar" type="HBoxContainer" parent="Control/MarginContainer2" unique_id=1497846335]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer2" unique_id=2052238531]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/MarginContainer2/VBoxContainer" unique_id=190839896]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ynd5l")
+text = "Health : 20"
+
+[node name="HotBar" type="HBoxContainer" parent="Control/MarginContainer2/VBoxContainer" unique_id=1497846335]
 layout_mode = 2
 size_flags_horizontal = 0
 alignment = 1
 
-[node name="SlotOne" parent="Control/MarginContainer2/HotBar" unique_id=900972848 instance=ExtResource("2_mfius")]
+[node name="SlotOne" parent="Control/MarginContainer2/VBoxContainer/HotBar" unique_id=900972848 instance=ExtResource("2_mfius")]
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Sprite2D" type="Sprite2D" parent="Control/MarginContainer2/HotBar/SlotOne" unique_id=458485392]
+[node name="Sprite2D" type="Sprite2D" parent="Control/MarginContainer2/VBoxContainer/HotBar/SlotOne" unique_id=458485392]
 centered = false
 offset = Vector2(3, 3)
 
-[node name="SlotOne2" parent="Control/MarginContainer2/HotBar" unique_id=1334686821 instance=ExtResource("2_mfius")]
+[node name="SlotOne2" parent="Control/MarginContainer2/VBoxContainer/HotBar" unique_id=1334686821 instance=ExtResource("2_mfius")]
 layout_mode = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="Control/MarginContainer2/HotBar/SlotOne2" unique_id=670763664]
+[node name="Sprite2D" type="Sprite2D" parent="Control/MarginContainer2/VBoxContainer/HotBar/SlotOne2" unique_id=670763664]
 centered = false
 offset = Vector2(3, 3)
 
-[node name="SlotOne3" parent="Control/MarginContainer2/HotBar" unique_id=1475044993 instance=ExtResource("2_mfius")]
+[node name="SlotOne3" parent="Control/MarginContainer2/VBoxContainer/HotBar" unique_id=1475044993 instance=ExtResource("2_mfius")]
 layout_mode = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="Control/MarginContainer2/HotBar/SlotOne3" unique_id=1978195657]
+[node name="Sprite2D" type="Sprite2D" parent="Control/MarginContainer2/VBoxContainer/HotBar/SlotOne3" unique_id=1978195657]
 centered = false
 offset = Vector2(3, 3)
 
-[node name="SlotOne4" parent="Control/MarginContainer2/HotBar" unique_id=1671295871 instance=ExtResource("2_mfius")]
+[node name="SlotOne4" parent="Control/MarginContainer2/VBoxContainer/HotBar" unique_id=1671295871 instance=ExtResource("2_mfius")]
 layout_mode = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="Control/MarginContainer2/HotBar/SlotOne4" unique_id=890484603]
+[node name="Sprite2D" type="Sprite2D" parent="Control/MarginContainer2/VBoxContainer/HotBar/SlotOne4" unique_id=890484603]
 centered = false
 offset = Vector2(3, 3)
 
-[node name="SlotOne5" parent="Control/MarginContainer2/HotBar" unique_id=588930423 instance=ExtResource("2_mfius")]
+[node name="SlotOne5" parent="Control/MarginContainer2/VBoxContainer/HotBar" unique_id=588930423 instance=ExtResource("2_mfius")]
 layout_mode = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="Control/MarginContainer2/HotBar/SlotOne5" unique_id=360507718]
+[node name="Sprite2D" type="Sprite2D" parent="Control/MarginContainer2/VBoxContainer/HotBar/SlotOne5" unique_id=360507718]
 centered = false
 offset = Vector2(3, 3)

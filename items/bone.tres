@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://comg8eque833y"]
+
+[ext_resource type="Texture2D" uid="uid://12q1edm7h27d" path="res://assets/held_bone.png" id="1_bhu1v"]
+[ext_resource type="Script" uid="uid://duohxx0k6ohro" path="res://scripts/resources/item_data.gd" id="1_wck62"]
+[ext_resource type="Texture2D" uid="uid://bkoveco5xw0sy" path="res://assets/bone.png" id="2_hwdej"]
+
+[resource]
+script = ExtResource("1_wck62")
+SlotItemTexture = ExtResource("2_hwdej")
+HeldItemTexture = ExtResource("1_bhu1v")
+ItemName = "Bone"
+MaxStackSize = 16
+metadata/_custom_type_script = "uid://duohxx0k6ohro"

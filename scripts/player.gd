@@ -1,8 +1,10 @@
 extends CharacterBody2D
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var heldItem: Sprite2D = $HeldItem/Sprite2D
+var heldItemScene = preload("res://scenes/held_item.tscn")
+var heldItem = heldItemScene.instantiate()
 
+var holdingItem = false
 
 const SPEED = 60
 
@@ -38,7 +40,15 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 func _process(_delta: float) -> void:
+	PlayerManager.player_position = global_position
 	if InventoryManager.inventory[PlayerManager.selectedSlot]["item"] !=  "":
-		heldItem.texture = InventoryManager.inventory[PlayerManager.selectedSlot]["file"].HeldItemTexture
-	else:
-		heldItem.texture = null
+		heldItem.get_child(1).texture = InventoryManager.inventory[PlayerManager.selectedSlot]["file"].HeldItemTexture
+		if !holdingItem:
+			add_child(heldItem)
+			holdingItem = true
+	elif holdingItem:
+		remove_child(heldItem)
+		holdingItem = false
+	if PlayerManager.HEALTH <= 0:
+		OS.set_restart_on_exit(true)
+		get_tree().quit()

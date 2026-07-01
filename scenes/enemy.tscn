@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dx6d3enhq3obn" path="res://assets/dummy.png" id="1_7p1mj"]
 [ext_resource type="Script" uid="uid://cyx0tuyq0qsl2" path="res://scripts/enemy.gd" id="1_md0e3"]
+[ext_resource type="PackedScene" uid="uid://bwpgfuf8011dy" path="res://scenes/enemy_weapon.tscn" id="3_4ra3w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_md0e3"]
 atlas = ExtResource("1_7p1mj")
@@ -13,7 +14,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_md0e3")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -24,7 +25,11 @@ size = Vector2(8, 3)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_md0e3"]
 size = Vector2(8, 16)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_h2y75"]
+radius = 122.06556
+
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1935463002]
+motion_mode = 1
 script = ExtResource("1_md0e3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1715574532]
@@ -35,10 +40,26 @@ frame_progress = 0.44601864
 position = Vector2(0, 5.5)
 shape = SubResource("RectangleShape2D_5uy6h")
 
-[node name="hurtbox" type="Area2D" parent="." unique_id=190353224]
+[node name="hurtbox" type="Area2D" parent="." unique_id=190353224 groups=["Actual_Enemy"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" unique_id=1318923545]
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_md0e3")
 
+[node name="playerDetector" type="Area2D" parent="." unique_id=19793671]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="playerDetector" unique_id=1205607424]
+shape = SubResource("CircleShape2D_h2y75")
+
+[node name="Timer" type="Timer" parent="." unique_id=994570320]
+wait_time = 2.0
+autostart = true
+
+[node name="EnemyWeapon" parent="." unique_id=1648607853 instance=ExtResource("3_4ra3w")]
+rotation = 0.7853982
+offset = Vector2(5, -5)
+
 [connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="body_entered" from="playerDetector" to="." method="_on_player_detector_body_entered"]
+[connection signal="body_exited" from="playerDetector" to="." method="_on_player_detector_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

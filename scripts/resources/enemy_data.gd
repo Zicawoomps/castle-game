@@ -4,4 +4,6 @@ extends Resource
 @export var SpriteSheet : SpriteFrames
 @export var Name : String
 @export var Health : int
-@export var Weight : int
+@export var Speed : int
+@export var ItemDrops : Resource
+@export var Weapon : Texture
